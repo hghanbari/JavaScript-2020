@@ -15,3 +15,4 @@ var mijnauto ={
     kleur: "Blauw",
 }
 console.log(mijnauto.type)
+document.getElementById("Gap").innerHTML=mijnauto.kleur
