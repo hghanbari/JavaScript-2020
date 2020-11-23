@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <title>Monkey Shuffle</title>
     <style>
-        html{
+        html {
             margin: 0 0 0 0;
             padding: 0 0 0 0;
         }
-        body{
-            font-family: Calibri ;
+
+        body {
+            font-family: Calibri;
             text-align: center;
         }
-        ima{
+
+        ima {
             width: 300px;
             height: 300px;
-            border:0px;
+            border: 0px;
         }
-        #Pics{
+
+        #Pics {
             width: 900px;
             height: 900px;
             border: solid 1px black;
@@ -40,10 +43,21 @@
     <img src="img/aap9.jpg">
 </div>
 <script>
-    var plaat =document.getElementsByTagName("img");
-    var random =Math.floor(Math.random()*9)+1;
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+    var randomNum = [];
 
-
+    while (randomNum.length < 9) {
+        random = Math.floor(Math.random() * 9) + 1;
+        if (randomNum.lastIndexOf(random) == -1) {
+            randomNum.push(random);
+        }
+        random=0
+        for (var plaat in plaatjes) {
+            plaatjes[plaat].src="img/aap"+randomNum[random] +".jpg";
+            random++;
+        }
+    }
 </script>
 </body>
 </html>
