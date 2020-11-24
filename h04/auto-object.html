@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auto</title>
+</head>
+<body>
+
+
+<script>
+    var mijnauto = {
+        merk: "toyota",
+        kleur: "white",
+        snelhied: 0,
+
+        gasgeven: function () {
+            this.snelhied += 5
+            console.log(this.snelhied);
+        },
+        toeteren: function () {
+            console.log("toet");
+        }
+
+    }
+    console.log(mijnauto.merk);
+
+    var i = 0
+    while (i < 9 ) {
+        mijnauto.gasgeven();
+        if (i == 4) {
+            mijnauto.toeteren();
+        }
+        i++
+    }
+
+
+</script>
+</body>
+</html>
