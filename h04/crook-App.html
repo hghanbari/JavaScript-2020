@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crook</title>
+    <style>
+        #head {
+            width: 300px;
+            height: 117px;
+            transition: 1s;
+            margin: 0;
+            padding: 0;
+        }
+
+        #mouth {
+            width: 300px;
+            height: 117px;
+            transition: 1s;
+            margin: 0;
+            padding: 0;
+        }
+
+        #eyes {
+            width: 300px;
+            height: 117px;
+            transition: 1s;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="head"></div>
+<div id="eyes"></div>
+<div id="mouth"></div>
+
+<script>
+    var setHaed = document.getElementById("head");
+    var setEyes = document.getElementById("eyes");
+    var setMouth = document.getElementById("mouth");
+    var tellerHead = 2;
+    var tellerEyes = 2;
+    var tellerMouth = 2;
+
+
+    setHaed.style.backgroundImage = "url('img/head1.jpg')";
+    setEyes.style.backgroundImage = "url('img/eyes1.jpg')";
+    setMouth.style.backgroundImage = "url('img/mouth1.jpg')";
+
+    setHaed.addEventListener("click", function () {
+        setHaed.style.backgroundImage = "url('img/head" + getChangesHead() + ".jpg')";
+    })
+    setEyes.addEventListener("click", function () {
+        setEyes.style.backgroundImage = "url('img/eyes" + getChangesEyes() + ".jpg')";
+    })
+    setMouth.addEventListener("click", function () {
+        setMouth.style.backgroundImage = "url('img/mouth" + getChangesMouth() + ".jpg')";
+    })
+
+    function getChangesHead() {
+        if (tellerHead >= 3) {
+            tellerHead = 1;
+        } else {
+            tellerHead++;
+        }
+        return tellerHead;
+    }
+
+    function getChangesEyes() {
+        if (tellerEyes >= 3) {
+            tellerEyes = 1;
+        } else {
+            tellerEyes++;
+        }
+        return tellerEyes;
+    }
+
+    function getChangesMouth() {
+        if (tellerMouth >= 3) {
+            tellerMouth = 1;
+        } else {
+            tellerMouth++;
+        }
+        return tellerMouth;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+    <style>
+        #Pics {
+            width: 300px;
+            height: 300px;
+            border: solid 3px black;
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+<div id="Pics"></div>
+<script>
+    var plaat =[1,2,3,4,5,6,7,8,9];
+    var sethilder = document.getElementById("Pics");
+    var teller = 0;
+    sethilder.style.backgroundImage = "url('../h03/img/aap5.jpg')";
+    sethilder.addEventListener("click",function (){
+        sethilder.style.backgroundImage = "url('../h03/img/aap"+ getChanges() +".jpg')";
+    })
+    function getChanges(){
+        if (teller >= plaat.length){
+            teller=1;
+        }else {
+            teller++;
+        }
+        return teller;
+    }
+</script>
+<a href="auto-object.html">auto</a>
+<a href="crook-App.html">crook</a>
+</body>
+</html>
