@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monkey Chooser</title>
+    <style>
+        body {
+            text-align: center;
+
+        }
+
+        div.aapPic {
+            box-sizing: border-box;
+            border: solid 1px black;
+            width: 300px;
+            height: 450px;
+            float: left;
+        }
+        div.favoriet{
+            width: 300px;
+            height: 150px;
+            background-image: none;
+        }
+
+        #pics {
+
+            width: 900px;
+            height: 1350px;
+            font-size: 0px;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="pics">
+
+</div>
+<script>
+    pics = document.getElementById("pics");
+    createPicHolder();
+    createAapHolder();
+
+    function createPicHolder() {
+        for (var i = 0; i < 9; i++) {
+            picHolder = document.createElement("div");
+            picHolder.className = "aapPic";
+            picHolder.id = "picture-holder-" + i;
+            pics.appendChild(picHolder);
+        }
+    }
+
+    function createAapHolder() {
+        picHolder = document.getElementsByClassName("aapPic");
+        for (var i = 0; i < picHolder.length; i++) {
+            favoriet = document.createElement("div");
+            favoriet.className = "favoriet";
+            favoriet.id ="favoriet-"+ (i+1);
+            aapPlatjes = document.createElement("img");
+            aapPlatjes.src = "../h03/img/aap" + (i+1) + ".jpg";
+            aapPlatjes.id = (i+1);
+            aapPlatjes.addEventListener("click" ,function  (){
+                makeFavorietApp(this.id);
+            })
+            picHolder[i].appendChild(favoriet);
+            picHolder[i].appendChild(aapPlatjes);
+        }
+
+    }
+    function makeFavorietApp (id){
+        console.log("Make je favoriet aap"+id);
+        nietfavoriet = document.getElementsByClassName("favoriet");
+        for(var i = 0; i < nietfavoriet.length; i++){
+            nietfavoriet [i].style.backgroundImage="none";
+        }
+        favoriet = document.getElementById("favoriet-"+id);
+        favoriet.style.backgroundImage = "url('img/hart.jpg')";
+    }
+</script>
+</body>
+</html>
