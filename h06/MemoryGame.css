@@ -19,10 +19,14 @@ h1 {
     font-family: "Barlow Condensed";
 
 }
-
-#txt {
+input{
     width: 35px;
-    margin-left: 50%;
+}
+#player {
+    display: flex;
+    flex-wrap: nowrap;
+
+
 }
 
 #gamePlast {
