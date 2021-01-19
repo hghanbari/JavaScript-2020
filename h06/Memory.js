@@ -75,6 +75,10 @@ function createFrontHolder() {
     var wait = false;
 
     function flipCard(img) {
+        if (round === 9) {
+            alert("End of the game!")
+
+        }
         if (img === previousImg || img.dataset.done || wait) {
             return;
         }
@@ -115,15 +119,13 @@ function createFrontHolder() {
                 setCurrentPlayer(player1);
             }
 
-            if (round === 9) {
-                alert("End of the game!")
 
-            }
         }
         img.src = img.dataset.realImg;
 
         document.getElementById("player1").value = player1.points;
         document.getElementById("player2").value = player2.points;
+
     }
 
     setCurrentPlayer(player1);
