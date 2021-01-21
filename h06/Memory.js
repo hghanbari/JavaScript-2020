@@ -70,6 +70,8 @@ function createFrontHolder() {
     function setCurrentPlayer(player) {
         currentPlayer = player;
         document.getElementById("current-player").innerText = player.name;
+        document.getElementById("player1").value = player1.points;
+        document.getElementById("player2").value = player2.points;
     }
 
     var wait = false;
@@ -79,6 +81,7 @@ function createFrontHolder() {
             alert("End of the game!")
 
         }
+
         if (img === previousImg || img.dataset.done || wait) {
             return;
         }
@@ -104,27 +107,26 @@ function createFrontHolder() {
                     wait = false;
                 }, 1000);
                 return;
-            }
-
-            // When the player choose correct cards
-
-            previousImg.dataset.done = true;
-            img.dataset.done = true;
-            round++;
-            previousImg = null;
-            currentPlayer.points++;
-            if (currentPlayer === player1) {
-                setCurrentPlayer(player2);
             } else {
-                setCurrentPlayer(player1);
+                // When the player choose correct cards
+
+                previousImg.dataset.done = true;
+                img.dataset.done = true;
+                round++;
+                previousImg = null;
+                currentPlayer.points++;
+                if (currentPlayer === player1) {
+                    setCurrentPlayer(player2);
+                } else {
+                    setCurrentPlayer(player1);
+                }
             }
 
 
         }
         img.src = img.dataset.realImg;
 
-        document.getElementById("player1").value = player1.points;
-        document.getElementById("player2").value = player2.points;
+
 
     }
 
